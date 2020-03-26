@@ -54,7 +54,7 @@ ROOT_URLCONF = 'bsq_one.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')]
+        'DIRS': [BASE_DIR + '/html']
         ,
         'APP_DIRS': True,
         'OPTIONS': {
@@ -76,8 +76,12 @@ WSGI_APPLICATION = 'bsq_one.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME':'bsq_one',
+        'USER':'root',
+        'PASSWORD':'135230',
+        'HOST':'127.0.0.1',
+        'PORT':'3306',
     }
 }
 
